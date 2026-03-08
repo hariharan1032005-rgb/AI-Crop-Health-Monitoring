@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Prediction Result</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#e8f5e9;
+text-align:center;
+}
+
+.nav{
+background:#2e7d32;
+padding:12px;
+}
+
+.nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.container{
+background:white;
+width:420px;
+margin:auto;
+margin-top:40px;
+padding:25px;
+border-radius:12px;
+box-shadow:0 0 12px rgba(0,0,0,0.2);
+}
+
+img{
+width:250px;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+.box{
+background:#f1f8e9;
+padding:10px;
+margin:8px;
+border-radius:8px;
+}
+
+.weather{
+background:#e3f2fd;
+padding:10px;
+margin:8px;
+border-radius:8px;
+}
+
+button{
+background:#2e7d32;
+color:white;
+border:none;
+padding:10px 18px;
+border-radius:6px;
+cursor:pointer;
+margin-top:10px;
+}
+
+button:hover{
+background:#1b5e20;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="nav">
+<a href="/">Home</a>
+<a href="/history">History</a>
+<a href="/stats">Statistics</a>
+</div>
+
+<div class="container">
+
+<h2>🌱 Prediction Result</h2>
+
+<img src="/uploads/{{image}}">
+
+<div class="box">
+<b>Disease Detected:</b> {{disease}}
+</div>
+
+<div class="box">
+<b>Confidence:</b> {{confidence}} %
+</div>
+
+<div class="box">
+<b>Pest Risk Level:</b> {{pest}}
+</div>
+
+<h3>🌤 Weather Conditions</h3>
+
+<div class="weather">
+Temperature: {{temp}} °C
+</div>
+
+<div class="weather">
+Humidity: {{humidity}} %
+</div>
+
+<div class="weather">
+Rainfall: {{rainfall}} mm
+</div>
+
+<h3>💊 Recommended Treatment</h3>
+
+<div class="box">
+{{solution}}
+</div>
+
+<a href="/">
+<button>🔍 Predict Another Leaf</button>
+</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>AI Crop Health Monitoring</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#e8f5e9;
+text-align:center;
+margin:0;
+}
+
+.nav{
+background:#2e7d32;
+padding:12px;
+}
+
+.nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.container{
+background:white;
+width:420px;
+margin:auto;
+margin-top:30px;
+padding:25px;
+border-radius:12px;
+box-shadow:0 0 12px rgba(0,0,0,0.2);
+}
+
+input{
+width:90%;
+padding:10px;
+margin:8px;
+}
+
+button{
+background:#2e7d32;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1b5e20;
+}
+
+img{
+margin-top:10px;
+border-radius:10px;
+max-width:250px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="nav">
+<a href="/">Home</a>
+<a href="/history">History</a>
+<a href="/stats">Statistics</a>
+</div>
+
+<div class="container">
+
+<h2>🌱 AI Crop Health Monitoring</h2>
+
+<form method="POST" enctype="multipart/form-data">
+
+<p>📷 Capture or Upload Leaf Image</p>
+
+<input 
+type="file" 
+name="image" 
+accept="image/*" 
+capture="environment"
+onchange="previewImage(event)" 
+required>
+
+<br>
+
+<img id="preview" style="display:none">
+
+<p>📍 Enter City</p>
+
+<input type="text" name="city" placeholder="Example: Chennai" required>
+
+<br><br>
+
+<button type="submit">🔍 Predict Disease</button>
+
+</form>
+
+</div>
+
+<script>
+
+function previewImage(event){
+var reader = new FileReader();
+
+reader.onload = function(){
+var img = document.getElementById("preview");
+img.src = reader.result;
+img.style.display="block";
+}
+
+reader.readAsDataURL(event.target.files[0]);
+}
+
+</script>
+
+</body>
+
+</html>
